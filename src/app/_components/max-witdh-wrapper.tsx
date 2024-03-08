@@ -1,17 +1,22 @@
 import { cn } from "@/lib/utils";
 import { NextPage } from "next";
 
-interface MaxWitdhWrapperProps {
+interface MaxWidthWrapperProps {
   className?: string;
   children: React.ReactNode;
 }
 
-export const MaxWitdhWrapper: NextPage<MaxWitdhWrapperProps> = ({
+export const MaxWidthWrapper: NextPage<MaxWidthWrapperProps> = ({
   className,
   children,
 }) => {
   return (
-    <div className={cn("mx-auto w-full max-w-screen-xl px-2.5 md:px-20", className)}>
+    <div
+      className={cn(
+        "mx-auto w-full max-w-screen-xl px-2.5 md:px-20",
+        className,
+      )}
+    >
       {children}
     </div>
   );
