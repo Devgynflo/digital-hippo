@@ -64,10 +64,12 @@ export const NavItem: NextPage<NavItemProps> = ({
                     >
                       <div className="group relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                         <Image
+                          priority
                           src={item.imageSrc}
                           alt="product category image"
                           fill
                           className="object-cover object-center"
+                          sizes="100%"
                         />
                       </div>
                       <Link

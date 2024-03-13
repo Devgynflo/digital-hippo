@@ -3,14 +3,18 @@ import { Icons } from "@/app/_components/icons";
 import { MaxWidthWrapper } from "@/app/_components/max-witdh-wrapper";
 import { NavItems } from "@/app/_components/nav-items";
 import { buttonVariants } from "@/app/_components/ui/button";
+import { getServerSideUser } from "@/lib/utils";
 
 import { NextPage } from "next";
+import { cookies } from "next/headers";
 import Link from "next/link";
+import { UserAccountNav } from "./user-account-nav";
 
 interface NavbarProps {}
 
-export const Navbar: NextPage<NavbarProps> = ({}) => {
-  const user = null;
+export const Navbar: NextPage<NavbarProps> = async ({}) => {
+  const nextCookies = cookies();
+  const { user } = await getServerSideUser(nextCookies);
 
   return (
     <div className="sticky inset-x-0 top-0 z-50 h-16 bg-white">
@@ -44,7 +48,9 @@ export const Navbar: NextPage<NavbarProps> = ({}) => {
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
 
-                  {user ? null : (
+                  {user ? (
+                    <UserAccountNav user={user} />
+                  ) : (
                     <Link
                       href={"/sign-up"}
                       className={buttonVariants({ variant: "ghost" })}
