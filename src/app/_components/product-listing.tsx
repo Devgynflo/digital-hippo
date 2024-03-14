@@ -6,6 +6,7 @@ import { Product } from "@/payload-types";
 import { NextPage } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ImageSlider } from "./image-slider";
 import { Skeleton } from "./ui/skeleton";
 
 interface ProductListingProps {
@@ -31,9 +32,15 @@ export const ProductListing: NextPage<ProductListingProps> = ({
   product,
 }) => {
   const [isVisible, setisVisible] = useState<boolean>(false);
+
   const label = PRODUCT_CATEGORIES.find(
     ({ value }) => value === product?.category,
   )?.label;
+
+  const imagesUrls = product?.images
+    .map(({ image }) => (typeof image === "string" ? image : image.url))
+    .filter(Boolean) as string[];
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setisVisible(true);
@@ -54,7 +61,7 @@ export const ProductListing: NextPage<ProductListingProps> = ({
         )}
       >
         <div className="flex w-full flex-col">
-          <ImageSlider />
+          <ImageSlider urls={imagesUrls} />
           <h3 className="mt-4 text-sm font-medium text-gray-700">
             {product.name}
           </h3>
