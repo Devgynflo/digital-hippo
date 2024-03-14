@@ -1,4 +1,5 @@
 import { MaxWidthWrapper } from "@/app/_components/max-witdh-wrapper";
+import { ProductReel } from "@/app/_components/product-reel";
 import { Button, buttonVariants } from "@/app/_components/ui/button";
 import { ArrowDownToLineIcon, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
@@ -46,7 +47,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/** TODO: List products  */}
+        <ProductReel
+          title="Brand new"
+          href="/products"
+          query={{ sort: "desc", limit: 2 }}
+        />
       </MaxWidthWrapper>
       <section className="border-t border-gray-200 bg-gray-50">
         <MaxWidthWrapper className="py-20">
