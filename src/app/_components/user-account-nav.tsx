@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/app/_components/ui/dropdown-menu";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/hooks/use-auth";
 import { User } from "@/payload-types";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { NextPage } from "next";

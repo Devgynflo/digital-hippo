@@ -46,11 +46,7 @@ export interface Product {
   id: string;
   user?: (string | null) | User;
   name: string;
-  description?:
-    | {
-        [k: string]: unknown;
-      }[]
-    | null;
+  description?: string | null;
   price: number;
   category: 'ui_kits' | 'icons';
   product_files: string | ProductFile;

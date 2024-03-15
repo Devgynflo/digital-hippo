@@ -1,3 +1,5 @@
+"use client";
+
 import { NextPage } from "next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -87,6 +89,8 @@ export const ImageSlider: NextPage<ImageSliderProps> = ({ urls }) => {
         {urls.map((url, i) => (
           <SwiperSlide key={i} className="relative -z-10 h-full w-full">
             <Image
+              priority
+              sizes="100%"
               fill
               loading="eager"
               src={url}
