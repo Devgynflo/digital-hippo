@@ -1,12 +1,19 @@
 "use client";
 
+import { useCart } from "@/hooks/use-cart";
+import { Product } from "@/payload-types";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
-interface AddToCartButtonProps {}
+interface AddToCartButtonProps {
+  product: Product;
+}
 
-export const AddToCartButton: NextPage<AddToCartButtonProps> = ({}) => {
+export const AddToCartButton: NextPage<AddToCartButtonProps> = ({
+  product,
+}) => {
+  const { addItem } = useCart();
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -19,7 +26,10 @@ export const AddToCartButton: NextPage<AddToCartButtonProps> = ({}) => {
     <Button
       size={"lg"}
       className="w-full"
-      onClick={() => setIsSuccess(true)}
+      onClick={() => {
+        addItem(product);
+        setIsSuccess(true);
+      }}
       disabled={isSuccess}
     >
       {isSuccess ? "Added !" : "Add to cart"}

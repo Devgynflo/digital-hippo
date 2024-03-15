@@ -8,19 +8,37 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/app/_components/ui/sheet";
+import { useCart } from "@/hooks/use-cart";
 import { formatPrice } from "@/lib/utils";
 import { ShoppingCart } from "lucide-react";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { CartItem } from "./cart-item";
 import { buttonVariants } from "./ui/button";
+import { ScrollArea } from "./ui/scroll-area";
 import { Separator } from "./ui/separator";
 
 interface CartProps {}
 
 export const Cart: NextPage<CartProps> = ({}) => {
-  const itemCount = 0;
+  const { items } = useCart();
+  const [isMounted, setIsMounted] = useState(false);
+
+  const itemCount = items.length;
   const fee = 1;
+  const cartTotal = items.reduce((acc, curr) => {
+    return (acc += curr.product.price);
+  }, 0);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Sheet>
@@ -42,8 +60,11 @@ export const Cart: NextPage<CartProps> = ({}) => {
         {itemCount > 0 ? (
           <>
             <div className="flex w-full flex-col pr-6">
-              {/* TODO: Cart Logic */}
-              Cart Items
+              <ScrollArea>
+                {items.map(({ product }) => (
+                  <CartItem product={product} key={product.id} />
+                ))}
+              </ScrollArea>
             </div>
             <div className="space-y-4 pr-6">
               <Separator />
@@ -58,7 +79,7 @@ export const Cart: NextPage<CartProps> = ({}) => {
                 </div>
                 <div className="flex">
                   <span className="flex-1">Total</span>
-                  <span>{formatPrice(1)}</span>
+                  <span>{formatPrice(cartTotal + fee)}</span>
                 </div>
               </div>
             </div>

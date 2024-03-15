@@ -123,7 +123,7 @@ const ProductPage: NextPage<ProductPageProps> = async ({ params }) => {
           <div className="mt-1 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
             <div>
               <div className="mt-10">
-                <AddToCartButton />
+                <AddToCartButton product={product} />
               </div>
               <div className="mt-6 text-center">
                 <div className="text-medium group inline-flex font-medium">
