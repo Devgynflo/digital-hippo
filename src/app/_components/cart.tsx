@@ -61,8 +61,8 @@ export const Cart: NextPage<CartProps> = ({}) => {
           <>
             <div className="flex w-full flex-col pr-6">
               <ScrollArea>
-                {items.map(({ product }) => (
-                  <CartItem product={product} key={product.id} />
+                {items.map(({ product }, i) => (
+                  <CartItem product={product} key={`product-[${i}]`} />
                 ))}
               </ScrollArea>
             </div>

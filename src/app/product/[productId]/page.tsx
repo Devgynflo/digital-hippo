@@ -113,14 +113,14 @@ const ProductPage: NextPage<ProductPageProps> = async ({ params }) => {
           </div>
 
           {/* Product Images */}
-          <div className="mt-10 lg:col-start-2 lg:row-start-2 lg:mt-0 lg:self-center">
+          <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
             <div className="aspect-square rounded-lg">
               <ImageSlider urls={validUrls} />
             </div>
           </div>
 
           {/* Add to Cart part */}
-          <div className="mt-1 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+          <div className="lg:row-start-2-2 mt-1 lg:col-start-1 lg:max-w-lg lg:self-start">
             <div>
               <div className="mt-10">
                 <AddToCartButton product={product} />

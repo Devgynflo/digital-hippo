@@ -1,10 +1,12 @@
-import { getInfiniteProductValidators } from "../lib/validators/products-validator";
 import { getPayloadClient } from "../get-payload";
+import { getInfiniteProductValidators } from "../lib/validators/products-validator";
 import { authRouter } from "./auth-router";
+import { paymentRouter } from "./payment-router";
 import { publicProcedure, router } from "./trpc";
 
 export const appRouter = router({
   authRouter: authRouter,
+  paymentRouter: paymentRouter,
   getInfiniteProducts: publicProcedure
     .input(getInfiniteProductValidators)
     .query(async ({ input }) => {
