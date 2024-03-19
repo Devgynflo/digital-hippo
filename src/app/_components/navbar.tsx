@@ -9,6 +9,7 @@ import { NextPage } from "next";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import { UserAccountNav } from "./user-account-nav";
+import { MobileNav } from "./mobile-nav";
 
 interface NavbarProps {}
 
@@ -22,7 +23,7 @@ export const Navbar: NextPage<NavbarProps> = async ({}) => {
         <MaxWidthWrapper>
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
-              {/* TODO:Mobile nav  */}
+              <MobileNav />
               <div className="ml-4 flex lg:ml-0">
                 <Link href={"/"}>
                   <Icons.logo className="size-10" />
