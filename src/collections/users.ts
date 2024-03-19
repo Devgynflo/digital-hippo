@@ -47,7 +47,7 @@ export const Users: CollectionConfig = {
         condition: () => false,
       },
       type: "relationship",
-      relationTo: "products_files",
+      relationTo: "product_files",
       hasMany: true,
     },
     {
