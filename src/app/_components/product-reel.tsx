@@ -62,7 +62,7 @@ export const ProductReel: NextPage<ProductReelProps> = ({
             href={href}
             className="hidden text-sm font-medium text-blue-500 hover:text-blue-600 md:block"
           >
-            Shop this collection <span aria-hidden="true">&rarr;</span>
+            Acheter cette collection <span aria-hidden="true">&rarr;</span>
           </Link>
         )}
       </div>

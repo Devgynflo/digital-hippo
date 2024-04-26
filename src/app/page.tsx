@@ -6,22 +6,22 @@ import Link from "next/link";
 
 const perks = [
   {
-    name: "Instant Delivery",
+    name: "Livraison immédiate",
     Icon: ArrowDownToLineIcon,
     description:
-      "Get your assets delivered to your email in seconds and download them right away.",
+      "Recevez vos actifs par courrier électronique en quelques secondes et téléchargez-les immédiatement.",
   },
   {
-    name: "Guaranteed Quality",
+    name: "Qualité garantie",
     Icon: CheckCircle,
     description:
-      "Every asset on our platform is verified by our team to ensure highest quality standards.Not happy, We offer a 30-day refund guarantee",
+      "Chaque actif sur notre plateforme est vérifié par notre équipe afin de garantir les normes de qualité les plus élevées.",
   },
   {
-    name: "For the planet",
+    name: "Pour la planète",
     Icon: Leaf,
     description:
-      "We &apos; pledged 1% of sales to the preservation and restoration of the natural environment",
+      "Nous nous engageons à consacrer 1% des ventes à la préservation et à la restauration de l'environnement naturel.",
   },
 ];
 
@@ -31,24 +31,25 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="mx-auto flex max-w-3xl flex-col items-center py-20 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Your market for high-quality{" "}
-            <span className="text-blue-600">digital assets</span>
+            Votre market pour des produits de qualité{" "}
+            <span className="text-blue-600">biens numériques</span>
           </h1>
 
           <p className="mt-6 max-w-prose text-lg text-muted-foreground">
-            Welcome to DigitalHippo. Every asset on our platform is verified by
-            our team to ensure our highest quality standards.
+            Bienvenue sur DigitalHippo. Chaque actif sur notre plateforme est
+            vérifié par notre équipe afin de garantir les plus hauts standards
+            de qualité.
           </p>
           <div className="mt-6 flex flex-col gap-4 sm:flex-row">
             <Link href="/products" className={buttonVariants()}>
-              Browse Trending
+              Explorer les tendances
             </Link>
-            <Button variant={"ghost"}>Our quality promise &rarr;</Button>
+            <Button variant={"ghost"}>Notre promesse de qualité &rarr;</Button>
           </div>
         </div>
 
         <ProductReel
-          title="Brand new"
+          title="Derniers Arrivages"
           href="/products"
           query={{ sort: "desc", limit: 2 }}
         />

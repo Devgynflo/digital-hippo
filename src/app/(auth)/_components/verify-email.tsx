@@ -20,9 +20,10 @@ export const VerifyEmail: NextPage<VerifyEmailProps> = ({ token }) => {
     return (
       <div className="flex flex-col items-center gap-2">
         <XCircle className="size-8 text-red-800" />
-        <h3 className="text-xl font-semibold">There was a problem</h3>
+        <h3 className="text-xl font-semibold">Il y a eu un problème</h3>
         <p className="text-sm text-muted-foreground">
-          This token is not valid or might be expired. Please try again
+          Ce token n&apos;est pas valide ou pourrait avoir expiré. Veuillez
+          réessayer
         </p>
       </div>
     );
@@ -42,14 +43,14 @@ export const VerifyEmail: NextPage<VerifyEmailProps> = ({ token }) => {
         </div>
         <h3 className="text-2xl font-semibold">You&apos;re all set</h3>
         <p className="mt-1 text-center text-muted-foreground">
-          Thank you for verifying email.
+          Merci de vérifier l&apos;adresse électronique.
         </p>
 
         <Link
           href={"/sign-in"}
           className={buttonVariants({ className: "mt-4" })}
         >
-          Sign in
+          Connexion
         </Link>
       </div>
     );
@@ -59,9 +60,9 @@ export const VerifyEmail: NextPage<VerifyEmailProps> = ({ token }) => {
     return (
       <div className="flex flex-col items-center gap-2">
         <Loader2 className="size-8 animate-spin text-blue-400" />
-        <h3 className="text-xl font-semibold">Verify ...</h3>
+        <h3 className="text-xl font-semibold">Vérification...</h3>
         <p className="text-sm text-muted-foreground">
-          This won&apos; take along.
+          Cela ne durera pas longtemps.
         </p>
       </div>
     );

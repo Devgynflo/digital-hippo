@@ -32,7 +32,7 @@ export const AddToCartButton: NextPage<AddToCartButtonProps> = ({
       }}
       disabled={isSuccess}
     >
-      {isSuccess ? "Added !" : "Add to cart"}
+      {isSuccess ? "Ajouté !" : "Ajouter au panier"}
     </Button>
   );
 };

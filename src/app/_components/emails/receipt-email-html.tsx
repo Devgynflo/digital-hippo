@@ -1,4 +1,3 @@
-import { formatPrice } from "../../../lib/utils";
 import {
   Body,
   Column,
@@ -16,9 +15,10 @@ import {
 } from "@react-email/components";
 import { format } from "date-fns";
 import { NextPage } from "next";
+import { formatPrice } from "../../../lib/utils";
 import { Product } from "../../../payload-types";
 
-import * as React from "react"; // resolve error => 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
+import * as React from "react";
 
 interface ReceiptEmailProps {
   email: string;
@@ -42,7 +42,7 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
   return (
     <Html>
       <Head />
-      <Preview>Your DigitalHippo Receipt</Preview>
+      <Preview>Votre facture DigitalHippo</Preview>
 
       <Body style={main}>
         <Container style={container}>
@@ -57,7 +57,7 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
             </Column>
 
             <Column align="right" style={tableCell}>
-              <Text style={heading}>Receipt</Text>
+              <Text style={heading}>Facture</Text>
             </Column>
           </Section>
           <Section style={informationTable}>
@@ -74,14 +74,14 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
               </Column>
 
               <Column style={informationTableColumn}>
-                <Text style={informationTableLabel}>INVOICE DATE</Text>
+                <Text style={informationTableLabel}>DATE ACHAT</Text>
                 <Text style={informationTableValue}>
                   {format(date, "dd MMM yyyy")}
                 </Text>
               </Column>
 
               <Column style={informationTableColumn}>
-                <Text style={informationTableLabel}>ORDER ID</Text>
+                <Text style={informationTableLabel}>COMMANDE ID</Text>
                 <Link
                   style={{
                     ...informationTableValue,
@@ -93,7 +93,7 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
             </Row>
           </Section>
           <Section style={productTitleTable}>
-            <Text style={productsTitle}>Order Summary</Text>
+            <Text style={productsTitle}>Information commande</Text>
           </Section>
           {products.map((product) => {
             const { image } = product.images[0];
@@ -124,7 +124,7 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
                     href={`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${orderId}`}
                     style={productLink}
                   >
-                    Download Asset
+                    Téléchargez votre contenu
                   </Link>
                 </Column>
 
@@ -138,7 +138,7 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
           <Section>
             <Column style={{ width: "64px" }}></Column>
             <Column style={{ paddingLeft: "40px", paddingTop: 20 }}>
-              <Text style={productTitle}>Transaction Fee</Text>
+              <Text style={productTitle}>Frais de transaction</Text>
             </Column>
 
             <Column style={productPriceWrapper} align="right">
@@ -159,13 +159,14 @@ export const ReceiptEmail: NextPage<ReceiptEmailProps> = ({
           <Hr style={productPriceLineBottom} />
 
           <Text style={footerLinksWrapper}>
-            <Link href="#">Account Settings</Link> •{" "}
-            <Link href="#">Terms of Sale</Link> •{" "}
-            <Link href="#">Privacy Policy </Link>
+            <Link href="#">Paramètres du compte</Link> •{" "}
+            <Link href="#">Conditions de vente</Link> •{" "}
+            <Link href="#">Politique de confidentialité</Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2023 {/* * dynamic date */} DigitalHippo Inc. <br />{" "}
-            <Link href="#">All rights reserved</Link>
+            Copyright © {getFullYear === 2024 ? "" : "2024 "}
+            {getFullYear} DigitalHippo Inc. <br />{" "}
+            <Link href="#">Tous droits réservés</Link>
           </Text>
         </Container>
       </Body>

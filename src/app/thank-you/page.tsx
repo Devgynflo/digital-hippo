@@ -63,15 +63,16 @@ const ThankYouPage: NextPage<ThankYouPageProps> = async ({ searchParams }) => {
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-32 xl:gap-x-24">
           <div className="lg:col-start-2">
             <p className="text-sm font-medium text-blue-600">
-              Order successful
+              Commande réussie
             </p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Thanks for ordering
+              Merci de votre commande
             </h1>
             {order._isPaid ? (
               <p className="mt-2 text-base text-muted-foreground">
-                Your order was processed and your assets are available to
-                download below.We&apos;ve sent your receipt and order details to{" "}
+                Votre commande a été traitée et vos actifs peuvent être
+                téléchargés ci-dessous.Nous avons envoyé votre reçu et les
+                détails de votre commande à{" "}
                 {typeof order.user !== "string" ? (
                   <span className="font-medium text-gray-900">
                     {order.user.email}
@@ -81,9 +82,8 @@ const ThankYouPage: NextPage<ThankYouPageProps> = async ({ searchParams }) => {
               </p>
             ) : (
               <p className="mt-2 text-base text-muted-foreground">
-                We appreciate your order, and we&apos;re currently processing
-                it. So hang tight and we&apos;ll send you confirmation very
-                soon!
+                Nous apprécions votre commande et nous sommes en train de la
+                traiter. Nous vous enverrons une confirmation très bientôt !
               </p>
             )}
 
@@ -119,7 +119,7 @@ const ThankYouPage: NextPage<ThankYouPageProps> = async ({ searchParams }) => {
                       <div className="space-y-1">
                         <h3 className="text-gray-900">{product.name}</h3>
 
-                        <p className="my-1">Category: {label}</p>
+                        <p className="my-1">Catégorie: {label}</p>
                       </div>
 
                       {order._isPaid && (
@@ -128,7 +128,7 @@ const ThankYouPage: NextPage<ThankYouPageProps> = async ({ searchParams }) => {
                           download={product.name}
                           className=" text-blue-600 underline-offset-2 transition hover:underline"
                         >
-                          Download asset
+                          Télécharger
                         </a>
                       )}
                     </div>
@@ -143,12 +143,12 @@ const ThankYouPage: NextPage<ThankYouPageProps> = async ({ searchParams }) => {
 
             <div className="space-y-6 border-t border-gray-200 pt-8 text-sm font-medium text-muted-foreground">
               <div className="flex justify-between">
-                <p>Subtotal :</p>
+                <p>Sous-total :</p>
                 <p className="text-gray-900">{formatPrice(orderTotal)}</p>
               </div>
 
               <div className="flex justify-between">
-                <p>Transaction Fee :</p>
+                <p>Frais de transaction :</p>
                 <p className="text-gray-900">{formatPrice(fee)}</p>
               </div>
             </div>
@@ -170,7 +170,7 @@ const ThankYouPage: NextPage<ThankYouPageProps> = async ({ searchParams }) => {
               href={"/products"}
               className="text-sm font-medium text-blue-600 transition hover:text-blue-700"
             >
-              Continue shopping &rarr;
+              Continuer les achats &rarr;
             </Link>
           </div>
         </div>

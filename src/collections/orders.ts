@@ -13,8 +13,8 @@ const yourOwnOrAdmin: Access = ({ req: { user } }) => {
 export const Orders: CollectionConfig = {
   slug: "orders",
   admin: {
-    useAsTitle: "Your Orders",
-    description: "A summary of all your orders on DigitalHippo",
+    useAsTitle: "Vos commandes",
+    description: "Un récapitulatif de toutes vos commandes sur DigitalHippo",
   },
   access: {
     create: ({ req }) => req.user.role === "admin",

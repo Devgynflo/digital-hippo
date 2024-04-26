@@ -58,7 +58,7 @@ export const CartItem: NextPage<CartItemProps> = ({ product }) => {
                 className="gap.0.5 flex items-center"
               >
                 <X className="h-4 w-3" />
-                Remove
+                Supprimer
               </button>
             </div>
           </div>

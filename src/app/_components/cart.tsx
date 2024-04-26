@@ -54,7 +54,7 @@ export const Cart: NextPage<CartProps> = ({}) => {
 
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
         <SheetHeader className="space-y-2.5 pr-6">
-          <SheetTitle>Cart ({itemCount})</SheetTitle>
+          <SheetTitle>Panier ({itemCount})</SheetTitle>
         </SheetHeader>
 
         {itemCount > 0 ? (
@@ -70,11 +70,11 @@ export const Cart: NextPage<CartProps> = ({}) => {
               <Separator />
               <div className="space-y-1.5 text-sm">
                 <div className="flex">
-                  <span className="flex-1">Shipping</span>
-                  <span>Free</span>
+                  <span className="flex-1">Frais d&apos;expédition</span>
+                  <span>Gratuit</span>
                 </div>
                 <div className="flex">
-                  <span className="flex-1">Transaction Fee</span>
+                  <span className="flex-1">Frais de transaction</span>
                   <span>{formatPrice(fee)}</span>
                 </div>
                 <div className="flex">
@@ -90,7 +90,7 @@ export const Cart: NextPage<CartProps> = ({}) => {
                   href={"/cart"}
                   className={buttonVariants({ className: "w-full" })}
                 >
-                  Continue to checkout
+                  Poursuivre le paiement
                 </Link>
               </SheetTrigger>
             </SheetFooter>
@@ -108,7 +108,7 @@ export const Cart: NextPage<CartProps> = ({}) => {
                 fill
               />
             </div>
-            <div className="text-xl font-semibold">Your cart is empty</div>
+            <div className="text-xl font-semibold">Votre panier est vide</div>
             <SheetTrigger asChild>
               <Link
                 href={"/products"}
@@ -118,7 +118,7 @@ export const Cart: NextPage<CartProps> = ({}) => {
                   className: "text-sm text-muted-foreground",
                 })}
               >
-                Add items to your cart to checkout
+                Ajoutez les articles à votre panier et passez au paiement.
               </Link>
             </SheetTrigger>
           </div>

@@ -79,7 +79,7 @@ export const NavItem: NextPage<NavItemProps> = ({
                         {item.name}
                       </Link>
                       <p className="mt-1" aria-hidden="true">
-                        Shop Now
+                        Boutique en ligne
                       </p>
                     </div>
                   ))}

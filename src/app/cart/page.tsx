@@ -43,7 +43,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
         <h1 className="text-gray-9000 text-3xl font-bold tracking-tight sm:text-4xl">
-          Shopping Cart
+          Panier
         </h1>
 
         <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
@@ -54,7 +54,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
                 "rounded-lg border-2 border-dashed border-zinc-200 p-12",
             )}
           >
-            <h2 className="sr-only">Items in your shopping cart</h2>
+            <h2 className="sr-only">Articles dans votre panier</h2>
             {!items.length && (
               <div className="flex h-full flex-col items-center justify-center space-y-1">
                 <div
@@ -70,9 +70,11 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
                     alt="empty cart"
                   />
                 </div>
-                <h3 className="text-2xl font-semibold">Your cart is empty</h3>
+                <h3 className="text-2xl font-semibold">
+                  Votre panier est vide
+                </h3>
                 <p className="text-center text-muted-foreground">
-                  Whoops ! Nothing to show here yet
+                  Oups ! Rien à montrer ici pour l&apos;instant
                 </p>
               </div>
             )}
@@ -121,7 +123,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
 
                           <div className="mt-1 flex text-sm">
                             <p className="text-muted-foreground">
-                              Category: {label}
+                              Categorie: {label}
                             </p>
                           </div>
 
@@ -144,7 +146,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
                       </div>
                       <p className="mt-4 flex space-x-2 text-sm text-gray-700">
                         <Check className="size-5 flex-shrink-0 text-green-500" />
-                        <span>Eligible for instant delivery</span>
+                        <span>Eligible pour une livraison instantanée</span>
                       </p>
                     </div>
                   </li>
@@ -153,11 +155,13 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
             </ul>
           </div>
           <section className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
-            <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
+            <h2 className="text-lg font-medium text-gray-900">
+              Résumé de la commande
+            </h2>
 
             <div className="mt-6 space-y-4">
               <div className="items-cneter flex justify-between">
-                <p className="text-sm text-gray-600">Subtotal</p>
+                <p className="text-sm text-gray-600">Sous-total</p>
                 <p className="text-sm text-gray-900">
                   {isMounted ? (
                     formatPrice(cartTotal)
@@ -169,7 +173,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
 
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <div className="flex items-center text-sm text-muted-foreground">
-                  <span>Flat Transaction fee</span>
+                  <span>Frais de transaction </span>
                 </div>
                 <div className="text-sm font-medium text-gray-900">
                   {isMounted ? (
@@ -182,7 +186,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
 
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <div className="text-base font-medium text-gray-900">
-                  Order Total
+                  Commande Total
                 </div>
                 <div className="text-base font-medium text-gray-900">
                   {isMounted ? (
@@ -204,7 +208,7 @@ const CartPage: NextPage<CartPageProps> = ({}) => {
                 {isLoading && (
                   <Loader2 className="ml-1.5 size-4 animate-spin" />
                 )}
-                Checkout
+                Paiement
               </Button>
             </div>
           </section>

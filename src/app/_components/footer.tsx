@@ -35,16 +35,16 @@ export const Footer: NextPage<FooterProps> = ({}) => {
                 </div>
                 <div className="relative mx-auto max-w-sm text-center">
                   <h3 className="font-semibold text-gray-900">
-                    Become a seller
+                    Devenez vendeur
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    If you&apos;d like to sell high-quality digital products,
-                    you can do so in minutes.
+                    Si vous souhaitez vendre des produits numériques de haute
+                    qualité, vous pouvez le faire en quelques minutes.
                     <Link
                       href={"/sign-in?as=seller"}
                       className="hover: block whitespace-nowrap font-medium text-black hover:text-zinc-800"
                     >
-                      Get started &rarr;
+                      Commencer &rarr;
                     </Link>
                   </p>
                 </div>
@@ -56,7 +56,7 @@ export const Footer: NextPage<FooterProps> = ({}) => {
         <div className="py-10 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()}. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Tous droits réservés. GynfloDev
             </p>
           </div>
 
@@ -66,19 +66,19 @@ export const Footer: NextPage<FooterProps> = ({}) => {
                 href={"#"}
                 className="text-sm text-muted-foreground hover:text-gray-600"
               >
-                Terms
+                Conditions
               </Link>
               <Link
                 href={"#"}
                 className="text-sm text-muted-foreground hover:text-gray-600"
               >
-                Cookie Policy
+                Politique en matière de cookies
               </Link>
               <Link
                 href={"#"}
                 className="text-sm text-muted-foreground hover:text-gray-600"
               >
-                Private Policy
+                Politique privée
               </Link>
             </div>
           </div>

@@ -28,15 +28,17 @@ const VerifyEmailPage: NextPage<VerifyEmailPageProps> = ({ searchParams }) => {
                 sizes="100%"
               />
             </div>
-            <h3 className="text-2xl font-semibold">Check your email</h3>
+            <h3 className="text-2xl font-semibold">
+              Consultez votre boite de réception
+            </h3>
             {toEmail ? (
               <p className="text-center text-muted-foreground">
-                We&apos;ve sent a verification link to{" "}
+                Nous avons envoyé un lien de vérification à{" "}
                 <span className="font-semibold">{toEmail}</span>
               </p>
             ) : (
               <p className="text-center text-muted-foreground">
-                We&apos;ve sent a verification link to your email
+                Nous avons envoyé un lien de vérification
               </p>
             )}
           </div>

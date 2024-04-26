@@ -37,7 +37,7 @@ const SignUpPage: NextPage<SignUpPageProps> = ({}) => {
     trpc.authRouter.createPayloadUser.useMutation({
       onError: (err) => {
         if (err.data?.code === "CONFLICT") {
-          toast.error("This email is already use !. Sign in instead");
+          toast.error("Cet email est déjà utilisé ! Se connecter");
           return;
         }
 
@@ -46,10 +46,10 @@ const SignUpPage: NextPage<SignUpPageProps> = ({}) => {
           return;
         }
 
-        toast.error("Something went wrong. Please try again.");
+        toast.error("Un problème s'est produit. Veuillez réessayer.");
       },
       onSuccess: ({ sentToEmail }) => {
-        toast.success(`Verification email sent to ${sentToEmail}.`);
+        toast.success(`E-mail de vérification envoyé à ${sentToEmail}.`);
         router.push(`/verify-email?to=${sentToEmail}`);
       },
     });
@@ -63,7 +63,7 @@ const SignUpPage: NextPage<SignUpPageProps> = ({}) => {
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col items-center space-y-2 text-center">
           <Icons.logo className="size-20" />
-          <h1 className="text-2xl font-bold">Create an account</h1>
+          <h1 className="text-2xl font-bold">Créer un compte</h1>
 
           <Link
             className={buttonVariants({
@@ -72,7 +72,7 @@ const SignUpPage: NextPage<SignUpPageProps> = ({}) => {
             })}
             href={"/sign-in"}
           >
-            Already have an account? Sign-in
+            Vous avez déjà un compte ? S&apos;identifier
             <ArrowRight className="size-4" />
           </Link>
         </div>
@@ -109,7 +109,7 @@ const SignUpPage: NextPage<SignUpPageProps> = ({}) => {
                 )}
               </div>
 
-              <Button disabled={isLoading}>Sign up</Button>
+              <Button disabled={isLoading}>S&apos;inscrire</Button>
             </div>
           </form>
         </div>

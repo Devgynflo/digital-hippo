@@ -106,7 +106,7 @@ const ProductPage: NextPage<ProductPageProps> = async ({ params }) => {
                   className="size-5 flex-shrink-0 text-green-500"
                 />
                 <p className="ml-2 text-sm  text-muted-foreground">
-                  Eligible for instant delivery
+                  Eligible pour une livraison instantanée
                 </p>
               </div>
             </section>
@@ -132,7 +132,7 @@ const ProductPage: NextPage<ProductPageProps> = async ({ params }) => {
                     aria-hidden="true"
                   />
                   <span className="text-muted-foreground hover:text-gray-700">
-                    30 Day Return Guarantee{" "}
+                    Garantie de retour de 30 jours{" "}
                   </span>
                 </div>
               </div>

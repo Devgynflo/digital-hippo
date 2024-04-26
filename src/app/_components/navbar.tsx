@@ -41,7 +41,7 @@ export const Navbar: NextPage<NavbarProps> = async ({}) => {
                       href={"/sign-in"}
                       className={buttonVariants({ variant: "ghost" })}
                     >
-                      Sign in
+                      Connexion
                     </Link>
                   )}
 
@@ -56,7 +56,7 @@ export const Navbar: NextPage<NavbarProps> = async ({}) => {
                       href={"/sign-up"}
                       className={buttonVariants({ variant: "ghost" })}
                     >
-                      Create account
+                      Créer un compte
                     </Link>
                   )}
 

@@ -112,7 +112,7 @@ export const MobileNav: NextPage<Props> = ({}) => {
                   href="/sign-in"
                   className="-m-2 block p-2 font-medium text-gray-900"
                 >
-                  Sign in
+                  Connexion
                 </Link>
               </div>
               <div className="flow-root">
@@ -121,7 +121,7 @@ export const MobileNav: NextPage<Props> = ({}) => {
                   href="/sign-up"
                   className="-m-2 block p-2 font-medium text-gray-900"
                 >
-                  Sign up
+                  S&apos;enregistrer
                 </Link>
               </div>
             </div>

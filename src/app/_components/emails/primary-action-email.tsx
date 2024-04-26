@@ -12,7 +12,7 @@ import {
   renderAsync,
 } from "@react-email/components";
 
-import * as React from "react"; // resolve error => 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
+import * as React from "react"; 
 
 interface EmailTemplateProps {
   actionLabel: string;
@@ -28,7 +28,7 @@ export const EmailTemplate = ({
   return (
     <Html>
       <Head />
-      <Preview>The marketplace for high-quality digital goods.</Preview>
+      <Preview>La marketplace des produits numériques de qualité.</Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
@@ -38,10 +38,10 @@ export const EmailTemplate = ({
             alt="DigitalHippo"
             style={logo}
           />
-          <Text style={paragraph}>Hi there,</Text>
+          <Text style={paragraph}>Bienvenue,</Text>
           <Text style={paragraph}>
-            Welcome to DigitalHippo, the marketplace for high quality digital
-            goods. Use the button below to {actionLabel}.
+            Bienvenue sur DigitalHippo, la marketplace des produits numériques
+            de qualité. Utilisez le bouton ci-dessous pour {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
@@ -49,13 +49,14 @@ export const EmailTemplate = ({
             </Button>
           </Section>
           <Text style={paragraph}>
-            Best,
+            Meilleure,
             <br />
-            The DigitalHippo team
+            L&apos;équipe DigitalHippo
           </Text>
           <Hr style={hr} />
           <Text style={footer}>
-            If you did not request this email, you can safely ignore it.
+            Si vous n&apos;avez pas demandé cet e-mail, vous pouvez l&apos;ignorer en
+            toute sécurité.
           </Text>
         </Container>
       </Body>

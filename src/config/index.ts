@@ -4,17 +4,17 @@ export const PRODUCT_CATEGORIES = [
     value: "ui_kits" as const,
     featured: [
       {
-        name: "Editor Picks",
+        name: "Choix de la rédaction",
         href: "/products?category=ui_kits",
         imageSrc: "/nav/ui-kits/mixed.jpg",
       },
       {
-        name: "New Arrivals",
+        name: "Nouveaux arrivages",
         href: "/products?category=ui_kits?sort=desc",
         imageSrc: "/nav/ui-kits/blue.jpg",
       },
       {
-        name: "Bestsellers",
+        name: "Meilleures ventes",
         href: "/products?category=ui_kits",
         imageSrc: "/nav/ui-kits/purple.jpg",
       },
@@ -25,17 +25,17 @@ export const PRODUCT_CATEGORIES = [
     value: "icons" as const,
     featured: [
       {
-        name: "Favorite Icons Picks",
+        name: "Choix des icônes préférées",
         href: "/products?category=icons",
         imageSrc: "/nav/icons/picks.jpg",
       },
       {
-        name: "New Arrivals",
+        name: "Nouveaux arrivages",
         href: "/products?category=icons?sort=desc",
         imageSrc: "/nav/icons/new.jpg",
       },
       {
-        name: "Bestselling Icons",
+        name: "Meilleures ventes Icons",
         href: "/products?category=icons",
         imageSrc: "/nav/icons/bestsellers.jpg",
       },

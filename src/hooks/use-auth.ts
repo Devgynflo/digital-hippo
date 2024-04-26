@@ -20,11 +20,11 @@ export const useAuth = () => {
         throw new Error();
       }
 
-      toast.success("Signed out successfully");
+      toast.success("Déconnexion réussie");
       router.push("/sign-in");
       router.refresh();
     } catch (error) {
-      toast.error("Could'nt sign out, please try again.");
+      toast.error("Impossible de se déconnecter, veuillez réessayer.");
     }
   };
 

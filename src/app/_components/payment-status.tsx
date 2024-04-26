@@ -32,13 +32,13 @@ export const PaymentStatus: NextPage<PaymentStatusProps> = ({
   return (
     <div className="gridcols-2 tex-gray-600 mt-16 grid gap-x-4 text-sm">
       <div>
-        <p className="font-medium text-gray-900">Shipping to</p>
+        <p className="font-medium text-gray-900">Expédition à</p>
         <p>{orderEmail}</p>
       </div>
 
       <div>
         <p className="font-medium text-gray-900">
-          {isPaid ? "Payment successful" : "Pending payment"}
+          {isPaid ? "Paiement effectué" : "Paiement en cours"}
         </p>
       </div>
     </div>

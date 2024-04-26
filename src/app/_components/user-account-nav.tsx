@@ -23,7 +23,7 @@ export const UserAccountNav: NextPage<UserAccountNavProps> = ({ user }) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="overflow-visible">
         <Button variant={"ghost"} size={"sm"} className="relative">
-          My account
+          Mon compte
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-60 bg-white" align="end">
@@ -34,10 +34,10 @@ export const UserAccountNav: NextPage<UserAccountNavProps> = ({ user }) => {
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href={"/sell"}>Seller Dashboard</Link>
+          <Link href={"/sell"}>Tableau de bord du vendeur</Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer" onClick={signOut}>
-          Log out
+          Déconnexion
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

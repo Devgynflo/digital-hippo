@@ -85,7 +85,7 @@ const SignUInPage: NextPage<SignInPageProps> = ({}) => {
         <div className="flex flex-col items-center space-y-2 text-center">
           <Icons.logo className="size-20" />
           <h1 className="text-2xl font-bold">
-            Sign in to your {isSeller ? "seller " : ""}account
+            Connectez-vous à votre compte {isSeller ? "de vendeur " : ""}
           </h1>
 
           <Link
@@ -95,7 +95,7 @@ const SignUInPage: NextPage<SignInPageProps> = ({}) => {
             })}
             href={"/sign-up"}
           >
-            Don&apos;t have an account? Sign-up
+            Vous n&apos;avez pas de compte ? S&apos;inscrire
             <ArrowRight className="size-4" />
           </Link>
         </div>
@@ -132,7 +132,7 @@ const SignUInPage: NextPage<SignInPageProps> = ({}) => {
                 )}
               </div>
 
-              <Button disabled={isLoading}>Sign in</Button>
+              <Button disabled={isLoading}>Connexion</Button>
             </div>
           </form>
 
@@ -145,7 +145,7 @@ const SignUInPage: NextPage<SignInPageProps> = ({}) => {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground">
-                or
+                ou
               </span>
             </div>
           </div>
@@ -156,7 +156,7 @@ const SignUInPage: NextPage<SignInPageProps> = ({}) => {
               variant={"secondary"}
               disabled={isLoading}
             >
-              Continue as seller
+              Continuer en tant que vendeur
             </Button>
           ) : (
             <Button
@@ -164,7 +164,7 @@ const SignUInPage: NextPage<SignInPageProps> = ({}) => {
               variant={"secondary"}
               disabled={isLoading}
             >
-              Continue as customer
+              Continuer en tant que client
             </Button>
           )}
         </div>
